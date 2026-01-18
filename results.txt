@@ -1,0 +1,1092 @@
+Query Protein: <A0A009I3Y5>
+N = 50 (μέγεθος λίστας Top-N για την αξιολόγηση Recall@N)
+
+[1] Συνοπτική σύγκριση μεθόδων
+Method	|	Time/query (s)	|	QPS	|	Recall@N vs BLAST Top-N
+Euclidean LSH	|	0.125	|	7.97	|	0.02
+Hypercube	|	0.014	|	72.7	|	0.00
+Neural LSH	|	0.022	|	44.9	|	0.04
+IVF-Flat	|	0.012	|	85.2	|	0.04
+IVF-PQ	|	0.005	|	195	|	0.00
+BLAST (Ref)	|	7.715	|	0.13	|	1.00	(ορίζει το Top-N)
+
+
+[2] Top-N γείτονες ανά μέθοδο (εδώ π.χ. N = 10 για εκτύπωση)
+
+Method: Euclidean LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P14181|LICA2_HAEIF>	|	1.69	|	31%	|	No	|	--
+2	|	<sp|A9KYL6|UBIB_SHEB9>	|	1.99	|	41%	|	No	|	--
+3	|	<sp|Q8E9R5|UBIB_SHEON>	|	2.01	|	26%	|	No	|	--
+4	|	<sp|P44150|Y1273_HAEIN>	|	2.03	|	57%	|	No	|	--
+5	|	<sp|Q1Q8I2|TPMT_PSYCK>	|	2.04	|	29%	|	No	|	--
+6	|	<sp|Q87PM1|KT3K_VIBPA>	|	2.04	|	24%	|	No	|	--
+7	|	<sp|Q9KM66|CQSS_VIBCH>	|	2.05	|	57%	|	No	|	--
+8	|	<sp|C1EQQ8|MTNK_BACC3>	|	2.06	|	31%	|	No	|	--
+9	|	<sp|Q635P6|MTNK_BACCZ>	|	2.08	|	35%	|	No	|	--
+10	|	<sp|B8ECC0|TPMT_SHEB2>	|	2.10	|	43%	|	No	|	--
+
+
+Method: Hypercube
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q4QLU9|RLMC_HAEI8>	|	1.91	|	50%	|	No	|	--
+2	|	<sp|Q9CPH1|RLMC_PASMU>	|	2.12	|	29%	|	No	|	--
+3	|	<sp|A1RP91|TRMA_SHESW>	|	2.14	|	35%	|	No	|	--
+4	|	<sp|C5BC48|TRMA_EDWI9>	|	2.18	|	33%	|	No	|	--
+5	|	<sp|B2TWG0|TRMA_SHIB3>	|	2.20	|	28%	|	No	|	--
+6	|	<sp|Q7A711|TAGX_STAAN>	|	2.22	|	42%	|	No	|	--
+7	|	<sp|B1LNS5|TRMA_ECOSM>	|	2.22	|	28%	|	No	|	--
+8	|	<sp|Q5E320|RLMD_ALIF1>	|	2.23	|	25%	|	No	|	--
+9	|	<sp|A8GL74|TRMA_SERP5>	|	2.24	|	28%	|	No	|	--
+10	|	<sp|Q087P4|TRMN6_SHEFN>	|	2.24	|	83%	|	No	|	--
+
+
+Method: Neural LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P14181|LICA2_HAEIF>	|	1.69	|	31%	|	No	|	--
+2	|	<sp|A9KYL6|UBIB_SHEB9>	|	1.99	|	41%	|	No	|	--
+3	|	<sp|B2J946|SASA_NOSP7>	|	2.01	|	39%	|	No	|	--
+4	|	<sp|Q8E9R5|UBIB_SHEON>	|	2.01	|	26%	|	No	|	--
+5	|	<sp|P24362|KRB2_VACCW>	|	2.03	|	27%	|	Yes	|	--
+6	|	<sp|Q87PM1|KT3K_VIBPA>	|	2.04	|	24%	|	No	|	--
+7	|	<sp|Q9KM66|CQSS_VIBCH>	|	2.05	|	57%	|	No	|	--
+8	|	<sp|Q9J523|V212_FOWPN>	|	2.05	|	23%	|	No	|	--
+9	|	<sp|P75612|Y081_MYCPN>	|	2.06	|	18%	|	No	|	--
+10	|	<sp|B0BBT2|PKND_CHLTB>	|	2.08	|	50%	|	Yes	|	--
+
+
+Method: IVF-Flat
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P14181|LICA2_HAEIF>	|	1.69	|	31%	|	No	|	--
+2	|	<sp|Q4QLU9|RLMC_HAEI8>	|	1.91	|	50%	|	No	|	--
+3	|	<sp|A9KYL6|UBIB_SHEB9>	|	1.99	|	41%	|	No	|	--
+4	|	<sp|Q7MHY6|RSMC_VIBVY>	|	2.00	|	39%	|	No	|	--
+5	|	<sp|B2J946|SASA_NOSP7>	|	2.01	|	39%	|	No	|	--
+6	|	<sp|Q8E9R5|UBIB_SHEON>	|	2.01	|	26%	|	No	|	--
+7	|	<sp|Q6C2A3|BUD32_YARLI>	|	2.02	|	21%	|	No	|	--
+8	|	<sp|A1SW96|MNMC_PSYIN>	|	2.02	|	38%	|	No	|	--
+9	|	<sp|P44150|Y1273_HAEIN>	|	2.03	|	57%	|	No	|	--
+10	|	<sp|P24362|KRB2_VACCW>	|	2.03	|	27%	|	Yes	|	--
+
+
+Method: IVF-PQ
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P14181|LICA2_HAEIF>	|	1.69	|	31%	|	No	|	--
+2	|	<sp|Q4QLU9|RLMC_HAEI8>	|	1.91	|	50%	|	No	|	--
+3	|	<sp|A9KYL6|UBIB_SHEB9>	|	1.99	|	41%	|	No	|	--
+4	|	<sp|Q7MHY6|RSMC_VIBVY>	|	2.00	|	39%	|	No	|	--
+5	|	<sp|B2J946|SASA_NOSP7>	|	2.01	|	39%	|	No	|	--
+6	|	<sp|Q8E9R5|UBIB_SHEON>	|	2.01	|	26%	|	No	|	--
+7	|	<sp|A1SW96|MNMC_PSYIN>	|	2.02	|	38%	|	No	|	--
+8	|	<sp|P44150|Y1273_HAEIN>	|	2.03	|	57%	|	No	|	--
+9	|	<sp|Q8EIL1|RSMC_SHEON>	|	2.03	|	57%	|	No	|	--
+10	|	<sp|Q7MAX6|TRMA_PHOLL>	|	2.03	|	29%	|	No	|	--
+
+
+
+Query Protein: <A0A009PCK4>
+N = 50 (μέγεθος λίστας Top-N για την αξιολόγηση Recall@N)
+
+[1] Συνοπτική σύγκριση μεθόδων
+Method	|	Time/query (s)	|	QPS	|	Recall@N vs BLAST Top-N
+Euclidean LSH	|	0.007	|	142	|	0.02
+Hypercube	|	0.001	|	1.74e+03	|	0.00
+Neural LSH	|	0.002	|	496	|	0.04
+IVF-Flat	|	0.002	|	631	|	0.04
+IVF-PQ	|	0.001	|	1.08e+03	|	0.00
+BLAST (Ref)	|	7.715	|	0.13	|	1.00	(ορίζει το Top-N)
+
+
+[2] Top-N γείτονες ανά μέθοδο (εδώ π.χ. N = 10 για εκτύπωση)
+
+Method: Euclidean LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P14181|LICA2_HAEIF>	|	1.67	|	31%	|	No	|	--
+2	|	<sp|A9KYL6|UBIB_SHEB9>	|	1.98	|	29%	|	No	|	--
+3	|	<sp|Q8E9R5|UBIB_SHEON>	|	2.01	|	26%	|	No	|	--
+4	|	<sp|P44150|Y1273_HAEIN>	|	2.02	|	67%	|	No	|	--
+5	|	<sp|Q1Q8I2|TPMT_PSYCK>	|	2.03	|	29%	|	No	|	--
+6	|	<sp|Q87PM1|KT3K_VIBPA>	|	2.04	|	22%	|	No	|	--
+7	|	<sp|Q9KM66|CQSS_VIBCH>	|	2.04	|	57%	|	No	|	--
+8	|	<sp|C1EQQ8|MTNK_BACC3>	|	2.04	|	31%	|	No	|	--
+9	|	<sp|Q635P6|MTNK_BACCZ>	|	2.06	|	35%	|	No	|	--
+10	|	<sp|Q6G4C4|KHSE_BARHE>	|	2.09	|	43%	|	No	|	--
+
+
+Method: Hypercube
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q4QLU9|RLMC_HAEI8>	|	1.91	|	50%	|	No	|	--
+2	|	<sp|Q9CPH1|RLMC_PASMU>	|	2.13	|	29%	|	No	|	--
+3	|	<sp|A1RP91|TRMA_SHESW>	|	2.15	|	35%	|	No	|	--
+4	|	<sp|C5BC48|TRMA_EDWI9>	|	2.19	|	33%	|	No	|	--
+5	|	<sp|B2TWG0|TRMA_SHIB3>	|	2.20	|	28%	|	No	|	--
+6	|	<sp|Q7A711|TAGX_STAAN>	|	2.21	|	42%	|	No	|	--
+7	|	<sp|B1LNS5|TRMA_ECOSM>	|	2.22	|	28%	|	No	|	--
+8	|	<sp|Q5E320|RLMD_ALIF1>	|	2.24	|	33%	|	No	|	--
+9	|	<sp|A8GL74|TRMA_SERP5>	|	2.24	|	28%	|	No	|	--
+10	|	<sp|Q0I4C6|RLMKL_HISS1>	|	2.25	|	43%	|	No	|	--
+
+
+Method: Neural LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P14181|LICA2_HAEIF>	|	1.67	|	31%	|	No	|	--
+2	|	<sp|A9KYL6|UBIB_SHEB9>	|	1.98	|	29%	|	No	|	--
+3	|	<sp|P24362|KRB2_VACCW>	|	2.00	|	27%	|	Yes	|	--
+4	|	<sp|B2J946|SASA_NOSP7>	|	2.00	|	33%	|	No	|	--
+5	|	<sp|Q8E9R5|UBIB_SHEON>	|	2.01	|	26%	|	No	|	--
+6	|	<sp|Q9J523|V212_FOWPN>	|	2.03	|	24%	|	No	|	--
+7	|	<sp|Q87PM1|KT3K_VIBPA>	|	2.04	|	22%	|	No	|	--
+8	|	<sp|Q9KM66|CQSS_VIBCH>	|	2.04	|	57%	|	No	|	--
+9	|	<sp|B0BBT2|PKND_CHLTB>	|	2.06	|	33%	|	Yes	|	--
+10	|	<sp|P75612|Y081_MYCPN>	|	2.06	|	26%	|	No	|	--
+
+
+Method: IVF-Flat
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P14181|LICA2_HAEIF>	|	1.67	|	31%	|	No	|	--
+2	|	<sp|Q4QLU9|RLMC_HAEI8>	|	1.91	|	50%	|	No	|	--
+3	|	<sp|A9KYL6|UBIB_SHEB9>	|	1.98	|	29%	|	No	|	--
+4	|	<sp|Q6C2A3|BUD32_YARLI>	|	2.00	|	21%	|	No	|	--
+5	|	<sp|P24362|KRB2_VACCW>	|	2.00	|	27%	|	Yes	|	--
+6	|	<sp|B2J946|SASA_NOSP7>	|	2.00	|	33%	|	No	|	--
+7	|	<sp|Q7MHY6|RSMC_VIBVY>	|	2.01	|	39%	|	No	|	--
+8	|	<sp|Q8E9R5|UBIB_SHEON>	|	2.01	|	26%	|	No	|	--
+9	|	<sp|A1SW96|MNMC_PSYIN>	|	2.02	|	57%	|	No	|	--
+10	|	<sp|P44150|Y1273_HAEIN>	|	2.02	|	67%	|	No	|	--
+
+
+Method: IVF-PQ
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P14181|LICA2_HAEIF>	|	1.67	|	31%	|	No	|	--
+2	|	<sp|Q4QLU9|RLMC_HAEI8>	|	1.91	|	50%	|	No	|	--
+3	|	<sp|A9KYL6|UBIB_SHEB9>	|	1.98	|	29%	|	No	|	--
+4	|	<sp|B2J946|SASA_NOSP7>	|	2.00	|	33%	|	No	|	--
+5	|	<sp|Q7MHY6|RSMC_VIBVY>	|	2.01	|	39%	|	No	|	--
+6	|	<sp|Q8E9R5|UBIB_SHEON>	|	2.01	|	26%	|	No	|	--
+7	|	<sp|A1SW96|MNMC_PSYIN>	|	2.02	|	57%	|	No	|	--
+8	|	<sp|P44150|Y1273_HAEIN>	|	2.02	|	67%	|	No	|	--
+9	|	<sp|Q1Q8I2|TPMT_PSYCK>	|	2.03	|	29%	|	No	|	--
+10	|	<sp|A2BRQ6|SASA_PROMS>	|	2.03	|	17%	|	No	|	--
+
+
+
+Query Protein: <A0A001>
+N = 50 (μέγεθος λίστας Top-N για την αξιολόγηση Recall@N)
+
+[1] Συνοπτική σύγκριση μεθόδων
+Method	|	Time/query (s)	|	QPS	|	Recall@N vs BLAST Top-N
+Euclidean LSH	|	0.025	|	40	|	0.12
+Hypercube	|	0.003	|	335	|	0.16
+Neural LSH	|	0.006	|	172	|	0.28
+IVF-Flat	|	0.008	|	128	|	0.20
+IVF-PQ	|	0.002	|	584	|	0.10
+BLAST (Ref)	|	7.715	|	0.13	|	1.00	(ορίζει το Top-N)
+
+
+[2] Top-N γείτονες ανά μέθοδο (εδώ π.χ. N = 10 για εκτύπωση)
+
+Method: Euclidean LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P9WQJ3|FATRP_MYCTU>	|	1.34	|	25%	|	Yes	|	--
+2	|	<sp|Q13BH6|NDVA_RHOPS>	|	1.42	|	26%	|	Yes	|	--
+3	|	<sp|A0K739|SSUB1_BURCH>	|	1.76	|	36%	|	No	|	--
+4	|	<sp|P23886|CYDC_ECOLI>	|	1.81	|	32%	|	Yes	|	--
+5	|	<sp|Q21BF6|MODC_RHOPB>	|	1.83	|	33%	|	No	|	--
+6	|	<sp|Q82MV1|SSUB1_STRAW>	|	1.87	|	33%	|	No	|	--
+7	|	<sp|Q60AI1|POTA_METCA>	|	1.90	|	31%	|	No	|	--
+8	|	<sp|P9WQJ4|OPPD_MYCTO>	|	1.90	|	29%	|	No	|	--
+9	|	<sp|Q28433|TAP1_GORGO>	|	1.90	|	29%	|	Yes	|	--
+10	|	<sp|Q7WGW1|CYSA_BORBR>	|	1.92	|	33%	|	No	|	--
+
+
+Method: Hypercube
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P9WQJ3|FATRP_MYCTU>	|	1.34	|	25%	|	Yes	|	--
+2	|	<sp|Q13BH6|NDVA_RHOPS>	|	1.42	|	26%	|	Yes	|	--
+3	|	<sp|Q03024|APRD_PSEAE>	|	1.46	|	38%	|	Yes	|	--
+4	|	<sp|Q20Z38|NDVA_RHOPB>	|	1.53	|	24%	|	Yes	|	--
+5	|	<sp|Q9ZEP3|CSEC_STRCO>	|	1.76	|	45%	|	No	|	--
+6	|	<sp|O70595|ABCB6_RAT>	|	1.86	|	28%	|	Yes	|	--
+7	|	<sp|Q9NP58|ABCB6_HUMAN>	|	1.87	|	28%	|	Yes	|	--
+8	|	<sp|Q28433|TAP1_GORGO>	|	1.90	|	29%	|	Yes	|	--
+9	|	<sp|A3Q5L8|MPRB_MYCSJ>	|	1.91	|	42%	|	No	|	--
+10	|	<sp|Q9CCJ1|MTRB_MYCLE>	|	1.98	|	41%	|	No	|	--
+
+
+Method: Neural LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P9WQJ3|FATRP_MYCTU>	|	1.34	|	25%	|	Yes	|	--
+2	|	<sp|Q13BH6|NDVA_RHOPS>	|	1.42	|	26%	|	Yes	|	--
+3	|	<sp|Q03024|APRD_PSEAE>	|	1.46	|	38%	|	Yes	|	--
+4	|	<sp|Q20Z38|NDVA_RHOPB>	|	1.53	|	24%	|	Yes	|	--
+5	|	<sp|Q9ZEP3|CSEC_STRCO>	|	1.76	|	45%	|	No	|	--
+6	|	<sp|A0K739|SSUB1_BURCH>	|	1.76	|	36%	|	No	|	--
+7	|	<sp|Q8P8W4|MSBA_XANCP>	|	1.77	|	36%	|	Yes	|	--
+8	|	<sp|Q3JSR6|SSUB_BURP1>	|	1.79	|	37%	|	No	|	--
+9	|	<sp|P23886|CYDC_ECOLI>	|	1.81	|	32%	|	Yes	|	--
+10	|	<sp|Q21BF6|MODC_RHOPB>	|	1.83	|	33%	|	No	|	--
+
+
+Method: IVF-Flat
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P9WQJ3|FATRP_MYCTU>	|	1.34	|	25%	|	Yes	|	--
+2	|	<sp|Q13BH6|NDVA_RHOPS>	|	1.42	|	26%	|	Yes	|	--
+3	|	<sp|Q03024|APRD_PSEAE>	|	1.46	|	38%	|	Yes	|	--
+4	|	<sp|Q20Z38|NDVA_RHOPB>	|	1.53	|	24%	|	Yes	|	--
+5	|	<sp|Q9ZEP3|CSEC_STRCO>	|	1.76	|	45%	|	No	|	--
+6	|	<sp|A0K739|SSUB1_BURCH>	|	1.76	|	36%	|	No	|	--
+7	|	<sp|Q8P8W4|MSBA_XANCP>	|	1.77	|	36%	|	Yes	|	--
+8	|	<sp|Q51719|YCOBA_PROFR>	|	1.77	|	30%	|	No	|	--
+9	|	<sp|Q3JSR6|SSUB_BURP1>	|	1.79	|	37%	|	No	|	--
+10	|	<sp|P23886|CYDC_ECOLI>	|	1.81	|	32%	|	Yes	|	--
+
+
+Method: IVF-PQ
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P9WQJ3|FATRP_MYCTU>	|	1.34	|	25%	|	Yes	|	--
+2	|	<sp|Q13BH6|NDVA_RHOPS>	|	1.42	|	26%	|	Yes	|	--
+3	|	<sp|Q03024|APRD_PSEAE>	|	1.46	|	38%	|	Yes	|	--
+4	|	<sp|Q20Z38|NDVA_RHOPB>	|	1.53	|	24%	|	Yes	|	--
+5	|	<sp|Q9ZEP3|CSEC_STRCO>	|	1.76	|	45%	|	No	|	--
+6	|	<sp|Q3JSR6|SSUB_BURP1>	|	1.79	|	37%	|	No	|	--
+7	|	<sp|Q21BF6|MODC_RHOPB>	|	1.83	|	33%	|	No	|	--
+8	|	<sp|Q28433|TAP1_GORGO>	|	1.90	|	29%	|	Yes	|	--
+9	|	<sp|A3Q5L8|MPRB_MYCSJ>	|	1.91	|	42%	|	No	|	--
+10	|	<sp|A6W3V7|RECF_KINRD>	|	1.94	|	39%	|	No	|	--
+
+
+
+Query Protein: <A0A002>
+N = 50 (μέγεθος λίστας Top-N για την αξιολόγηση Recall@N)
+
+[1] Συνοπτική σύγκριση μεθόδων
+Method	|	Time/query (s)	|	QPS	|	Recall@N vs BLAST Top-N
+Euclidean LSH	|	0.009	|	114	|	0.14
+Hypercube	|	0.000	|	2.02e+03	|	0.18
+Neural LSH	|	0.002	|	602	|	0.38
+IVF-Flat	|	0.003	|	297	|	0.30
+IVF-PQ	|	0.001	|	982	|	0.16
+BLAST (Ref)	|	7.715	|	0.13	|	1.00	(ορίζει το Top-N)
+
+
+[2] Top-N γείτονες ανά μέθοδο (εδώ π.χ. N = 10 για εκτύπωση)
+
+Method: Euclidean LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P9WQJ3|FATRP_MYCTU>	|	1.33	|	28%	|	Yes	|	--
+2	|	<sp|Q13BH6|NDVA_RHOPS>	|	1.43	|	29%	|	Yes	|	--
+3	|	<sp|P23886|CYDC_ECOLI>	|	1.76	|	28%	|	Yes	|	--
+4	|	<sp|Q82MV1|SSUB1_STRAW>	|	1.79	|	30%	|	No	|	--
+5	|	<sp|A0K739|SSUB1_BURCH>	|	1.83	|	33%	|	No	|	--
+6	|	<sp|Q28433|TAP1_GORGO>	|	1.85	|	27%	|	Yes	|	--
+7	|	<sp|Q60AI1|POTA_METCA>	|	1.89	|	34%	|	No	|	--
+8	|	<sp|P9WQJ4|OPPD_MYCTO>	|	1.89	|	27%	|	No	|	--
+9	|	<sp|Q7VZE5|CYSA_BORPE>	|	1.90	|	30%	|	No	|	--
+10	|	<sp|Q7WGW1|CYSA_BORBR>	|	1.90	|	29%	|	No	|	--
+
+
+Method: Hypercube
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P9WQJ3|FATRP_MYCTU>	|	1.33	|	28%	|	Yes	|	--
+2	|	<sp|Q13BH6|NDVA_RHOPS>	|	1.43	|	29%	|	Yes	|	--
+3	|	<sp|Q03024|APRD_PSEAE>	|	1.50	|	31%	|	Yes	|	--
+4	|	<sp|Q20Z38|NDVA_RHOPB>	|	1.53	|	28%	|	Yes	|	--
+5	|	<sp|Q28433|TAP1_GORGO>	|	1.85	|	27%	|	Yes	|	--
+6	|	<sp|O70595|ABCB6_RAT>	|	1.90	|	32%	|	Yes	|	--
+7	|	<sp|Q9NP58|ABCB6_HUMAN>	|	1.92	|	32%	|	Yes	|	--
+8	|	<sp|Q9ZEP3|CSEC_STRCO>	|	2.00	|	25%	|	No	|	--
+9	|	<sp|A3Q5L8|MPRB_MYCSJ>	|	2.03	|	53%	|	No	|	--
+10	|	<sp|Q9CCJ1|MTRB_MYCLE>	|	2.10	|	47%	|	No	|	--
+
+
+Method: Neural LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P9WQJ3|FATRP_MYCTU>	|	1.33	|	28%	|	Yes	|	--
+2	|	<sp|Q13BH6|NDVA_RHOPS>	|	1.43	|	29%	|	Yes	|	--
+3	|	<sp|Q03024|APRD_PSEAE>	|	1.50	|	31%	|	Yes	|	--
+4	|	<sp|Q20Z38|NDVA_RHOPB>	|	1.53	|	28%	|	Yes	|	--
+5	|	<sp|Q8P8W4|MSBA_XANCP>	|	1.75	|	28%	|	Yes	|	--
+6	|	<sp|P23886|CYDC_ECOLI>	|	1.76	|	28%	|	Yes	|	--
+7	|	<sp|A0K739|SSUB1_BURCH>	|	1.83	|	33%	|	No	|	--
+8	|	<sp|Q28433|TAP1_GORGO>	|	1.85	|	27%	|	Yes	|	--
+9	|	<sp|O70595|ABCB6_RAT>	|	1.90	|	32%	|	Yes	|	--
+10	|	<sp|Q3JSR6|SSUB_BURP1>	|	1.90	|	33%	|	No	|	--
+
+
+Method: IVF-Flat
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P9WQJ3|FATRP_MYCTU>	|	1.33	|	28%	|	Yes	|	--
+2	|	<sp|Q13BH6|NDVA_RHOPS>	|	1.43	|	29%	|	Yes	|	--
+3	|	<sp|Q03024|APRD_PSEAE>	|	1.50	|	31%	|	Yes	|	--
+4	|	<sp|Q20Z38|NDVA_RHOPB>	|	1.53	|	28%	|	Yes	|	--
+5	|	<sp|Q8P8W4|MSBA_XANCP>	|	1.75	|	28%	|	Yes	|	--
+6	|	<sp|P23886|CYDC_ECOLI>	|	1.76	|	28%	|	Yes	|	--
+7	|	<sp|Q51719|YCOBA_PROFR>	|	1.78	|	31%	|	No	|	--
+8	|	<sp|Q82MV1|SSUB1_STRAW>	|	1.79	|	30%	|	No	|	--
+9	|	<sp|A0K739|SSUB1_BURCH>	|	1.83	|	33%	|	No	|	--
+10	|	<sp|Q28433|TAP1_GORGO>	|	1.85	|	27%	|	Yes	|	--
+
+
+Method: IVF-PQ
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P9WQJ3|FATRP_MYCTU>	|	1.33	|	28%	|	Yes	|	--
+2	|	<sp|Q13BH6|NDVA_RHOPS>	|	1.43	|	29%	|	Yes	|	--
+3	|	<sp|Q03024|APRD_PSEAE>	|	1.50	|	31%	|	Yes	|	--
+4	|	<sp|Q20Z38|NDVA_RHOPB>	|	1.53	|	28%	|	Yes	|	--
+5	|	<sp|Q8P8W4|MSBA_XANCP>	|	1.75	|	28%	|	Yes	|	--
+6	|	<sp|P23886|CYDC_ECOLI>	|	1.76	|	28%	|	Yes	|	--
+7	|	<sp|Q51719|YCOBA_PROFR>	|	1.78	|	31%	|	No	|	--
+8	|	<sp|A0K739|SSUB1_BURCH>	|	1.83	|	33%	|	No	|	--
+9	|	<sp|Q28433|TAP1_GORGO>	|	1.85	|	27%	|	Yes	|	--
+10	|	<sp|Q3JSR6|SSUB_BURP1>	|	1.90	|	33%	|	No	|	--
+
+
+
+Query Protein: <A0A009HL96>
+N = 50 (μέγεθος λίστας Top-N για την αξιολόγηση Recall@N)
+
+[1] Συνοπτική σύγκριση μεθόδων
+Method	|	Time/query (s)	|	QPS	|	Recall@N vs BLAST Top-N
+Euclidean LSH	|	0.010	|	97.2	|	0.70
+Hypercube	|	0.004	|	243	|	0.20
+Neural LSH	|	0.002	|	484	|	0.70
+IVF-Flat	|	0.002	|	434	|	0.72
+IVF-PQ	|	0.001	|	1.13e+03	|	0.70
+BLAST (Ref)	|	7.715	|	0.13	|	1.00	(ορίζει το Top-N)
+
+
+[2] Top-N γείτονες ανά μέθοδο (εδώ π.χ. N = 10 για εκτύπωση)
+
+Method: Euclidean LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q5HI09|GRAR_STAAC>	|	0.64	|	26%	|	Yes	|	--
+2	|	<sp|P33112|SPAR_BACIU>	|	0.64	|	31%	|	Yes	|	--
+3	|	<sp|Q99VW2|GRAR_STAAN>	|	0.66	|	26%	|	Yes	|	--
+4	|	<sp|Q8CQ37|GRAR_STAES>	|	0.67	|	28%	|	Yes	|	--
+5	|	<sp|Q99RR6|HSSR_STAAM>	|	0.75	|	31%	|	Yes	|	--
+6	|	<sp|Q9AE24|RPRY_BACFR>	|	0.78	|	28%	|	Yes	|	--
+7	|	<sp|P28257|YCF27_GALSU>	|	0.78	|	33%	|	Yes	|	--
+8	|	<sp|P0CAW8|CTRA_CAUVC>	|	0.79	|	31%	|	Yes	|	--
+9	|	<sp|A6WZ81|CTRA_BRUA4>	|	0.85	|	33%	|	Yes	|	--
+10	|	<sp|P45189|PHOB_HAEIN>	|	0.88	|	34%	|	Yes	|	--
+
+
+Method: Hypercube
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q5HI09|GRAR_STAAC>	|	0.64	|	26%	|	Yes	|	--
+2	|	<sp|P33112|SPAR_BACIU>	|	0.64	|	31%	|	Yes	|	--
+3	|	<sp|Q99VW2|GRAR_STAAN>	|	0.66	|	26%	|	Yes	|	--
+4	|	<sp|P28257|YCF27_GALSU>	|	0.78	|	33%	|	Yes	|	--
+5	|	<sp|P0CAW8|CTRA_CAUVC>	|	0.79	|	31%	|	Yes	|	--
+6	|	<sp|A6WZ81|CTRA_BRUA4>	|	0.85	|	33%	|	Yes	|	--
+7	|	<sp|P0AA17|OMPR_ECOL6>	|	1.22	|	31%	|	Yes	|	--
+8	|	<sp|A0A0H3NGY1|OMPR_SALTS>	|	1.22	|	31%	|	Yes	|	--
+9	|	<sp|Q9KM23|VXRB_VIBCH>	|	1.24	|	33%	|	Yes	|	--
+10	|	<sp|P55701|Y4XI_SINFN>	|	1.67	|	24%	|	Yes	|	--
+
+
+Method: Neural LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q5HI09|GRAR_STAAC>	|	0.64	|	26%	|	Yes	|	--
+2	|	<sp|P33112|SPAR_BACIU>	|	0.64	|	31%	|	Yes	|	--
+3	|	<sp|Q99VW2|GRAR_STAAN>	|	0.66	|	26%	|	Yes	|	--
+4	|	<sp|Q8CQ37|GRAR_STAES>	|	0.67	|	28%	|	Yes	|	--
+5	|	<sp|Q99RR6|HSSR_STAAM>	|	0.75	|	31%	|	Yes	|	--
+6	|	<sp|Q9AE24|RPRY_BACFR>	|	0.78	|	28%	|	Yes	|	--
+7	|	<sp|P28257|YCF27_GALSU>	|	0.78	|	33%	|	Yes	|	--
+8	|	<sp|P0CAW8|CTRA_CAUVC>	|	0.79	|	31%	|	Yes	|	--
+9	|	<sp|A6WZ81|CTRA_BRUA4>	|	0.85	|	33%	|	Yes	|	--
+10	|	<sp|P45189|PHOB_HAEIN>	|	0.88	|	34%	|	Yes	|	--
+
+
+Method: IVF-Flat
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q5HI09|GRAR_STAAC>	|	0.64	|	26%	|	Yes	|	--
+2	|	<sp|P33112|SPAR_BACIU>	|	0.64	|	31%	|	Yes	|	--
+3	|	<sp|Q99VW2|GRAR_STAAN>	|	0.66	|	26%	|	Yes	|	--
+4	|	<sp|Q8CQ37|GRAR_STAES>	|	0.67	|	28%	|	Yes	|	--
+5	|	<sp|Q99RR6|HSSR_STAAM>	|	0.75	|	31%	|	Yes	|	--
+6	|	<sp|Q9AE24|RPRY_BACFR>	|	0.78	|	28%	|	Yes	|	--
+7	|	<sp|P28257|YCF27_GALSU>	|	0.78	|	33%	|	Yes	|	--
+8	|	<sp|P0CAW8|CTRA_CAUVC>	|	0.79	|	31%	|	Yes	|	--
+9	|	<sp|A6WZ81|CTRA_BRUA4>	|	0.85	|	33%	|	Yes	|	--
+10	|	<sp|P45189|PHOB_HAEIN>	|	0.88	|	34%	|	Yes	|	--
+
+
+Method: IVF-PQ
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q5HI09|GRAR_STAAC>	|	0.64	|	26%	|	Yes	|	--
+2	|	<sp|P33112|SPAR_BACIU>	|	0.64	|	31%	|	Yes	|	--
+3	|	<sp|Q99VW2|GRAR_STAAN>	|	0.66	|	26%	|	Yes	|	--
+4	|	<sp|Q8CQ37|GRAR_STAES>	|	0.67	|	28%	|	Yes	|	--
+5	|	<sp|Q99RR6|HSSR_STAAM>	|	0.75	|	31%	|	Yes	|	--
+6	|	<sp|Q9AE24|RPRY_BACFR>	|	0.78	|	28%	|	Yes	|	--
+7	|	<sp|P28257|YCF27_GALSU>	|	0.78	|	33%	|	Yes	|	--
+8	|	<sp|P0CAW8|CTRA_CAUVC>	|	0.79	|	31%	|	Yes	|	--
+9	|	<sp|A6WZ81|CTRA_BRUA4>	|	0.85	|	33%	|	Yes	|	--
+10	|	<sp|P45189|PHOB_HAEIN>	|	0.88	|	34%	|	Yes	|	--
+
+
+
+Query Protein: <A0A009HLV9>
+N = 50 (μέγεθος λίστας Top-N για την αξιολόγηση Recall@N)
+
+[1] Συνοπτική σύγκριση μεθόδων
+Method	|	Time/query (s)	|	QPS	|	Recall@N vs BLAST Top-N
+Euclidean LSH	|	0.011	|	93.4	|	0.38
+Hypercube	|	0.002	|	565	|	0.14
+Neural LSH	|	0.002	|	622	|	0.36
+IVF-Flat	|	0.003	|	377	|	0.36
+IVF-PQ	|	0.001	|	1.05e+03	|	0.28
+BLAST (Ref)	|	7.715	|	0.13	|	1.00	(ορίζει το Top-N)
+
+
+[2] Top-N γείτονες ανά μέθοδο (εδώ π.χ. N = 10 για εκτύπωση)
+
+Method: Euclidean LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P28787|NTRC_PROHU>	|	0.57	|	63%	|	Yes	|	--
+2	|	<sp|Q06065|ATOC_ECOLI>	|	0.89	|	41%	|	Yes	|	--
+3	|	<sp|Q5E3W8|NORR_ALIF1>	|	0.92	|	44%	|	Yes	|	--
+4	|	<sp|P23747|ALGB_PSEAE>	|	0.95	|	40%	|	Yes	|	--
+5	|	<sp|O87455|LUXO_VIBC3>	|	0.96	|	40%	|	Yes	|	--
+6	|	<sp|P59402|NORR_SHIFL>	|	0.99	|	40%	|	Yes	|	--
+7	|	<sp|A8A3I6|NORR_ECOHS>	|	1.00	|	38%	|	Yes	|	--
+8	|	<sp|B6I695|NORR_ECOSE>	|	1.01	|	41%	|	Yes	|	--
+9	|	<sp|A1KU52|RUVB_NEIMF>	|	1.01	|	43%	|	No	|	--
+10	|	<sp|B7N6T9|NORR_ECOLU>	|	1.01	|	45%	|	Yes	|	--
+
+
+Method: Hypercube
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P28787|NTRC_PROHU>	|	0.57	|	63%	|	Yes	|	--
+2	|	<sp|Q06065|ATOC_ECOLI>	|	0.89	|	41%	|	Yes	|	--
+3	|	<sp|Q5E3W8|NORR_ALIF1>	|	0.92	|	44%	|	Yes	|	--
+4	|	<sp|P23747|ALGB_PSEAE>	|	0.95	|	40%	|	Yes	|	--
+5	|	<sp|P36219|WTSA_PANSE>	|	1.03	|	41%	|	Yes	|	--
+6	|	<sp|Q8EEF3|RUVB_SHEON>	|	1.05	|	67%	|	No	|	--
+7	|	<sp|P37931|HRPS_PSESY>	|	1.07	|	42%	|	Yes	|	--
+8	|	<sp|Q15RN6|RUVB_PSEA6>	|	1.10	|	45%	|	No	|	--
+9	|	<sp|P37930|HRPR_PSESY>	|	1.14	|	39%	|	Yes	|	--
+10	|	<sp|P0DF50|RUVB_STRP3>	|	1.22	|	40%	|	No	|	--
+
+
+Method: Neural LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P28787|NTRC_PROHU>	|	0.57	|	63%	|	Yes	|	--
+2	|	<sp|Q06065|ATOC_ECOLI>	|	0.89	|	41%	|	Yes	|	--
+3	|	<sp|Q5E3W8|NORR_ALIF1>	|	0.92	|	44%	|	Yes	|	--
+4	|	<sp|P23747|ALGB_PSEAE>	|	0.95	|	40%	|	Yes	|	--
+5	|	<sp|O87455|LUXO_VIBC3>	|	0.96	|	40%	|	Yes	|	--
+6	|	<sp|P59402|NORR_SHIFL>	|	0.99	|	40%	|	Yes	|	--
+7	|	<sp|A8A3I6|NORR_ECOHS>	|	1.00	|	38%	|	Yes	|	--
+8	|	<sp|B6I695|NORR_ECOSE>	|	1.01	|	41%	|	Yes	|	--
+9	|	<sp|A1KU52|RUVB_NEIMF>	|	1.01	|	43%	|	No	|	--
+10	|	<sp|B7N6T9|NORR_ECOLU>	|	1.01	|	45%	|	Yes	|	--
+
+
+Method: IVF-Flat
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P28787|NTRC_PROHU>	|	0.57	|	63%	|	Yes	|	--
+2	|	<sp|Q06065|ATOC_ECOLI>	|	0.89	|	41%	|	Yes	|	--
+3	|	<sp|Q5E3W8|NORR_ALIF1>	|	0.92	|	44%	|	Yes	|	--
+4	|	<sp|P23747|ALGB_PSEAE>	|	0.95	|	40%	|	Yes	|	--
+5	|	<sp|O87455|LUXO_VIBC3>	|	0.96	|	40%	|	Yes	|	--
+6	|	<sp|P59402|NORR_SHIFL>	|	0.99	|	40%	|	Yes	|	--
+7	|	<sp|A8A3I6|NORR_ECOHS>	|	1.00	|	38%	|	Yes	|	--
+8	|	<sp|B6I695|NORR_ECOSE>	|	1.01	|	41%	|	Yes	|	--
+9	|	<sp|A1KU52|RUVB_NEIMF>	|	1.01	|	43%	|	No	|	--
+10	|	<sp|B7N6T9|NORR_ECOLU>	|	1.01	|	45%	|	Yes	|	--
+
+
+Method: IVF-PQ
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P28787|NTRC_PROHU>	|	0.57	|	63%	|	Yes	|	--
+2	|	<sp|Q06065|ATOC_ECOLI>	|	0.89	|	41%	|	Yes	|	--
+3	|	<sp|Q5E3W8|NORR_ALIF1>	|	0.92	|	44%	|	Yes	|	--
+4	|	<sp|O87455|LUXO_VIBC3>	|	0.96	|	40%	|	Yes	|	--
+5	|	<sp|P59402|NORR_SHIFL>	|	0.99	|	40%	|	Yes	|	--
+6	|	<sp|A8A3I6|NORR_ECOHS>	|	1.00	|	38%	|	Yes	|	--
+7	|	<sp|B6I695|NORR_ECOSE>	|	1.01	|	41%	|	Yes	|	--
+8	|	<sp|A1KU52|RUVB_NEIMF>	|	1.01	|	43%	|	No	|	--
+9	|	<sp|B7N6T9|NORR_ECOLU>	|	1.01	|	45%	|	Yes	|	--
+10	|	<sp|Q0TEH1|NORR_ECOL5>	|	1.01	|	41%	|	Yes	|	--
+
+
+
+Query Protein: <A0A009HN45>
+N = 50 (μέγεθος λίστας Top-N για την αξιολόγηση Recall@N)
+
+[1] Συνοπτική σύγκριση μεθόδων
+Method	|	Time/query (s)	|	QPS	|	Recall@N vs BLAST Top-N
+Euclidean LSH	|	0.006	|	167	|	0.10
+Hypercube	|	0.001	|	722	|	0.18
+Neural LSH	|	0.004	|	227	|	0.22
+IVF-Flat	|	0.004	|	253	|	0.20
+IVF-PQ	|	0.001	|	984	|	0.14
+BLAST (Ref)	|	7.715	|	0.13	|	1.00	(ορίζει το Top-N)
+
+
+[2] Top-N γείτονες ανά μέθοδο (εδώ π.χ. N = 10 για εκτύπωση)
+
+Method: Euclidean LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q12WZ6|HELS_METBU>	|	1.16	|	35%	|	No	|	--
+2	|	<sp|A7TJS7|SPB4_VANPO>	|	1.23	|	24%	|	No	|	--
+3	|	<sp|Q5RF63|RECQ1_PONAB>	|	1.25	|	47%	|	No	|	--
+4	|	<sp|Q8SQM5|IF4A_ENCCU>	|	1.28	|	25%	|	No	|	--
+5	|	<sp|Q10D00|SUV3M_ORYSJ>	|	1.29	|	20%	|	No	|	--
+6	|	<sp|Q3K0N2|UVRC_STRA1>	|	1.29	|	32%	|	No	|	--
+7	|	<sp|Q9KHU8|DNAA_ACHLA>	|	1.30	|	35%	|	No	|	--
+8	|	<sp|Q9LU46|RH35_ARATH>	|	1.33	|	29%	|	Yes	|	--
+9	|	<sp|Q95216|HLTF_RABIT>	|	1.35	|	31%	|	Yes	|	--
+10	|	<sp|Q2FZD0|UVRC_STAA8>	|	1.35	|	33%	|	No	|	--
+
+
+Method: Hypercube
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|A7MSB2|RAPA_VIBC1>	|	0.68	|	29%	|	Yes	|	--
+2	|	<sp|Q9ZDW2|UVRB_RICPR>	|	0.74	|	25%	|	No	|	--
+3	|	<sp|B0BT63|RAPA_ACTPJ>	|	0.76	|	32%	|	Yes	|	--
+4	|	<sp|Q0HMR2|RAPA_SHESM>	|	0.79	|	30%	|	Yes	|	--
+5	|	<sp|Q0HR19|RAPA_SHESR>	|	0.80	|	30%	|	Yes	|	--
+6	|	<sp|Q99ZA5|UVRB_STRP1>	|	0.81	|	36%	|	No	|	--
+7	|	<sp|Q1JBD1|UVRB_STRPB>	|	0.81	|	36%	|	No	|	--
+8	|	<sp|Q5X0E6|UVRB_LEGPL>	|	0.83	|	29%	|	No	|	--
+9	|	<sp|A6QKD8|SECA2_STAAE>	|	0.83	|	36%	|	No	|	--
+10	|	<sp|A1A7A6|RAPA_ECOK1>	|	0.84	|	31%	|	Yes	|	--
+
+
+Method: Neural LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|A7MSB2|RAPA_VIBC1>	|	0.68	|	29%	|	Yes	|	--
+2	|	<sp|Q9ZDW2|UVRB_RICPR>	|	0.74	|	25%	|	No	|	--
+3	|	<sp|B0BT63|RAPA_ACTPJ>	|	0.76	|	32%	|	Yes	|	--
+4	|	<sp|P52126|ABPB_ECOLI>	|	0.79	|	18%	|	No	|	--
+5	|	<sp|Q0HMR2|RAPA_SHESM>	|	0.79	|	30%	|	Yes	|	--
+6	|	<sp|Q0HR19|RAPA_SHESR>	|	0.80	|	30%	|	Yes	|	--
+7	|	<sp|Q99ZA5|UVRB_STRP1>	|	0.81	|	36%	|	No	|	--
+8	|	<sp|Q1JBD1|UVRB_STRPB>	|	0.81	|	36%	|	No	|	--
+9	|	<sp|Q5X0E6|UVRB_LEGPL>	|	0.83	|	29%	|	No	|	--
+10	|	<sp|A1A7A6|RAPA_ECOK1>	|	0.84	|	31%	|	Yes	|	--
+
+
+Method: IVF-Flat
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|A7MSB2|RAPA_VIBC1>	|	0.68	|	29%	|	Yes	|	--
+2	|	<sp|Q9ZDW2|UVRB_RICPR>	|	0.74	|	25%	|	No	|	--
+3	|	<sp|B0BT63|RAPA_ACTPJ>	|	0.76	|	32%	|	Yes	|	--
+4	|	<sp|P52126|ABPB_ECOLI>	|	0.79	|	18%	|	No	|	--
+5	|	<sp|Q0HMR2|RAPA_SHESM>	|	0.79	|	30%	|	Yes	|	--
+6	|	<sp|Q0HR19|RAPA_SHESR>	|	0.80	|	30%	|	Yes	|	--
+7	|	<sp|Q99ZA5|UVRB_STRP1>	|	0.81	|	36%	|	No	|	--
+8	|	<sp|Q1JBD1|UVRB_STRPB>	|	0.81	|	36%	|	No	|	--
+9	|	<sp|Q5X0E6|UVRB_LEGPL>	|	0.83	|	29%	|	No	|	--
+10	|	<sp|A1A7A6|RAPA_ECOK1>	|	0.84	|	31%	|	Yes	|	--
+
+
+Method: IVF-PQ
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|A7MSB2|RAPA_VIBC1>	|	0.68	|	29%	|	Yes	|	--
+2	|	<sp|Q9ZDW2|UVRB_RICPR>	|	0.74	|	25%	|	No	|	--
+3	|	<sp|B0BT63|RAPA_ACTPJ>	|	0.76	|	32%	|	Yes	|	--
+4	|	<sp|P52126|ABPB_ECOLI>	|	0.79	|	18%	|	No	|	--
+5	|	<sp|Q0HMR2|RAPA_SHESM>	|	0.79	|	30%	|	Yes	|	--
+6	|	<sp|Q0HR19|RAPA_SHESR>	|	0.80	|	30%	|	Yes	|	--
+7	|	<sp|Q99ZA5|UVRB_STRP1>	|	0.81	|	36%	|	No	|	--
+8	|	<sp|Q1JBD1|UVRB_STRPB>	|	0.81	|	36%	|	No	|	--
+9	|	<sp|Q5X0E6|UVRB_LEGPL>	|	0.83	|	29%	|	No	|	--
+10	|	<sp|P0C9B2|VF706_ASFWA>	|	0.85	|	22%	|	No	|	--
+
+
+
+Query Protein: <A0A009HQC9>
+N = 50 (μέγεθος λίστας Top-N για την αξιολόγηση Recall@N)
+
+[1] Συνοπτική σύγκριση μεθόδων
+Method	|	Time/query (s)	|	QPS	|	Recall@N vs BLAST Top-N
+Euclidean LSH	|	0.006	|	165	|	0.10
+Hypercube	|	0.001	|	1.43e+03	|	0.24
+Neural LSH	|	0.004	|	245	|	0.24
+IVF-Flat	|	0.002	|	645	|	0.24
+IVF-PQ	|	0.001	|	1.12e+03	|	0.24
+BLAST (Ref)	|	7.715	|	0.13	|	1.00	(ορίζει το Top-N)
+
+
+[2] Top-N γείτονες ανά μέθοδο (εδώ π.χ. N = 10 για εκτύπωση)
+
+Method: Euclidean LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q9HT80|DPO1_PSEAE>	|	1.41	|	23%	|	No	|	--
+2	|	<sp|Q12WZ6|HELS_METBU>	|	1.43	|	47%	|	No	|	--
+3	|	<sp|Q43965|MOPR_ACIGI>	|	1.48	|	64%	|	No	|	--
+4	|	<sp|Q6G526|DNAA_BARHE>	|	1.48	|	27%	|	No	|	--
+5	|	<sp|Q5F928|UVRC_NEIG1>	|	1.49	|	46%	|	No	|	--
+6	|	<sp|Q9LU46|RH35_ARATH>	|	1.51	|	24%	|	Yes	|	--
+7	|	<sp|P44442|RND_HAEIN>	|	1.52	|	29%	|	No	|	--
+8	|	<sp|Q8SQM5|IF4A_ENCCU>	|	1.52	|	26%	|	No	|	--
+9	|	<sp|Q10D00|SUV3M_ORYSJ>	|	1.53	|	33%	|	No	|	--
+10	|	<sp|Q7MXZ1|DNAA_PORGI>	|	1.56	|	36%	|	No	|	--
+
+
+Method: Hypercube
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q0HR19|RAPA_SHESR>	|	0.52	|	45%	|	Yes	|	--
+2	|	<sp|Q0HMR2|RAPA_SHESM>	|	0.52	|	44%	|	Yes	|	--
+3	|	<sp|A0KGL5|RAPA_AERHH>	|	0.52	|	45%	|	Yes	|	--
+4	|	<sp|A1A7A6|RAPA_ECOK1>	|	0.57	|	42%	|	Yes	|	--
+5	|	<sp|A7ZW09|RAPA_ECOHS>	|	0.58	|	42%	|	Yes	|	--
+6	|	<sp|B0BT63|RAPA_ACTPJ>	|	0.58	|	40%	|	Yes	|	--
+7	|	<sp|A7MSB2|RAPA_VIBC1>	|	0.59	|	44%	|	Yes	|	--
+8	|	<sp|Q48LP5|RAPA_PSE14>	|	0.61	|	44%	|	Yes	|	--
+9	|	<sp|B5FI41|RAPA_SALDC>	|	0.61	|	42%	|	Yes	|	--
+10	|	<sp|Q5PDF0|RAPA_SALPA>	|	0.61	|	42%	|	Yes	|	--
+
+
+Method: Neural LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q0HR19|RAPA_SHESR>	|	0.52	|	45%	|	Yes	|	--
+2	|	<sp|Q0HMR2|RAPA_SHESM>	|	0.52	|	44%	|	Yes	|	--
+3	|	<sp|A0KGL5|RAPA_AERHH>	|	0.52	|	45%	|	Yes	|	--
+4	|	<sp|A1A7A6|RAPA_ECOK1>	|	0.57	|	42%	|	Yes	|	--
+5	|	<sp|A7ZW09|RAPA_ECOHS>	|	0.58	|	42%	|	Yes	|	--
+6	|	<sp|B0BT63|RAPA_ACTPJ>	|	0.58	|	40%	|	Yes	|	--
+7	|	<sp|A7MSB2|RAPA_VIBC1>	|	0.59	|	44%	|	Yes	|	--
+8	|	<sp|Q48LP5|RAPA_PSE14>	|	0.61	|	44%	|	Yes	|	--
+9	|	<sp|B5FI41|RAPA_SALDC>	|	0.61	|	42%	|	Yes	|	--
+10	|	<sp|Q5PDF0|RAPA_SALPA>	|	0.61	|	42%	|	Yes	|	--
+
+
+Method: IVF-Flat
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q0HR19|RAPA_SHESR>	|	0.52	|	45%	|	Yes	|	--
+2	|	<sp|Q0HMR2|RAPA_SHESM>	|	0.52	|	44%	|	Yes	|	--
+3	|	<sp|A0KGL5|RAPA_AERHH>	|	0.52	|	45%	|	Yes	|	--
+4	|	<sp|A1A7A6|RAPA_ECOK1>	|	0.57	|	42%	|	Yes	|	--
+5	|	<sp|A7ZW09|RAPA_ECOHS>	|	0.58	|	42%	|	Yes	|	--
+6	|	<sp|B0BT63|RAPA_ACTPJ>	|	0.58	|	40%	|	Yes	|	--
+7	|	<sp|A7MSB2|RAPA_VIBC1>	|	0.59	|	44%	|	Yes	|	--
+8	|	<sp|Q48LP5|RAPA_PSE14>	|	0.61	|	44%	|	Yes	|	--
+9	|	<sp|B5FI41|RAPA_SALDC>	|	0.61	|	42%	|	Yes	|	--
+10	|	<sp|Q5PDF0|RAPA_SALPA>	|	0.61	|	42%	|	Yes	|	--
+
+
+Method: IVF-PQ
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q0HR19|RAPA_SHESR>	|	0.52	|	45%	|	Yes	|	--
+2	|	<sp|Q0HMR2|RAPA_SHESM>	|	0.52	|	44%	|	Yes	|	--
+3	|	<sp|A0KGL5|RAPA_AERHH>	|	0.52	|	45%	|	Yes	|	--
+4	|	<sp|A1A7A6|RAPA_ECOK1>	|	0.57	|	42%	|	Yes	|	--
+5	|	<sp|A7ZW09|RAPA_ECOHS>	|	0.58	|	42%	|	Yes	|	--
+6	|	<sp|B0BT63|RAPA_ACTPJ>	|	0.58	|	40%	|	Yes	|	--
+7	|	<sp|A7MSB2|RAPA_VIBC1>	|	0.59	|	44%	|	Yes	|	--
+8	|	<sp|Q48LP5|RAPA_PSE14>	|	0.61	|	44%	|	Yes	|	--
+9	|	<sp|B5FI41|RAPA_SALDC>	|	0.61	|	42%	|	Yes	|	--
+10	|	<sp|Q5PDF0|RAPA_SALPA>	|	0.61	|	42%	|	Yes	|	--
+
+
+
+Query Protein: <A0A009HPM0>
+N = 50 (μέγεθος λίστας Top-N για την αξιολόγηση Recall@N)
+
+[1] Συνοπτική σύγκριση μεθόδων
+Method	|	Time/query (s)	|	QPS	|	Recall@N vs BLAST Top-N
+Euclidean LSH	|	0.005	|	194	|	0.10
+Hypercube	|	0.002	|	419	|	0.00
+Neural LSH	|	0.001	|	769	|	0.00
+IVF-Flat	|	0.004	|	276	|	0.14
+IVF-PQ	|	0.001	|	954	|	0.00
+BLAST (Ref)	|	7.715	|	0.13	|	1.00	(ορίζει το Top-N)
+
+
+[2] Top-N γείτονες ανά μέθοδο (εδώ π.χ. N = 10 για εκτύπωση)
+
+Method: Euclidean LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q88XP4|Y1151_LACPL>	|	1.45	|	83%	|	No	|	--
+2	|	<sp|P77439|PTFX1_ECOLI>	|	1.51	|	37%	|	No	|	--
+3	|	<sp|P44150|Y1273_HAEIN>	|	1.53	|	25%	|	No	|	--
+4	|	<sp|Q3ILQ9|CYSG_PSET1>	|	1.55	|	19%	|	No	|	--
+5	|	<sp|A2RDW0|DDL_STRPG>	|	1.55	|	24%	|	Yes	|	--
+6	|	<sp|A1S1Z8|TRMA_SHEAM>	|	1.55	|	24%	|	No	|	--
+7	|	<sp|B6I4D2|WECG_ECOSE>	|	1.59	|	50%	|	No	|	--
+8	|	<sp|Q04P21|PURT_LEPBJ>	|	1.62	|	23%	|	Yes	|	--
+9	|	<sp|P36640|ATMA_SALTY>	|	1.64	|	21%	|	No	|	--
+10	|	<sp|Q1Q8I5|CMOB_PSYCK>	|	1.64	|	26%	|	No	|	--
+
+
+Method: Hypercube
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P77439|PTFX1_ECOLI>	|	1.51	|	37%	|	No	|	--
+2	|	<sp|B7I2C3|FMT_ACIB5>	|	1.61	|	21%	|	No	|	--
+3	|	<sp|Q15ZY3|FMT_PSEA6>	|	1.64	|	37%	|	No	|	--
+4	|	<sp|B0TLC9|FMT_SHEHH>	|	1.65	|	70%	|	No	|	--
+5	|	<sp|Q4FRK9|ARGC_PSYA2>	|	1.68	|	35%	|	No	|	--
+6	|	<sp|B7LYG7|GCSP_ECO8A>	|	1.69	|	24%	|	No	|	--
+7	|	<sp|Q5L8X0|REX_BACFN>	|	1.69	|	39%	|	No	|	--
+8	|	<sp|Q31WG4|GCSP_SHIBS>	|	1.70	|	27%	|	No	|	--
+9	|	<sp|B2U0S0|GCSP_SHIB3>	|	1.70	|	27%	|	No	|	--
+10	|	<sp|B7N7E6|GCSP_ECOLU>	|	1.70	|	27%	|	No	|	--
+
+
+Method: Neural LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q9CMJ8|RIMK_PASMU>	|	1.35	|	40%	|	No	|	--
+2	|	<sp|P57029|DNAG_NEIMB>	|	1.51	|	39%	|	No	|	--
+3	|	<sp|P77439|PTFX1_ECOLI>	|	1.51	|	37%	|	No	|	--
+4	|	<sp|Q7VKR0|UVRC_HAEDU>	|	1.57	|	35%	|	No	|	--
+5	|	<sp|Q08346|DNAG_HAEIN>	|	1.57	|	27%	|	No	|	--
+6	|	<sp|B6I4D2|WECG_ECOSE>	|	1.59	|	50%	|	No	|	--
+7	|	<sp|B4SYE2|MNMG_SALNS>	|	1.60	|	26%	|	No	|	--
+8	|	<sp|Q12PY3|MUTS_SHEDO>	|	1.61	|	34%	|	No	|	--
+9	|	<sp|Q5X5X1|HIS7_LEGPA>	|	1.62	|	25%	|	No	|	--
+10	|	<sp|A7ZTV2|MNMG_ECO24>	|	1.63	|	26%	|	No	|	--
+
+
+Method: IVF-Flat
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q612F5|PCCA_CAEBR>	|	1.27	|	41%	|	Yes	|	--
+2	|	<sp|Q5I0C3|MCCA_RAT>	|	1.29	|	47%	|	Yes	|	--
+3	|	<sp|Q9CMJ8|RIMK_PASMU>	|	1.35	|	40%	|	No	|	--
+4	|	<sp|B2TWG0|TRMA_SHIB3>	|	1.44	|	36%	|	No	|	--
+5	|	<sp|Q6FAM6|PURT_ACIAD>	|	1.44	|	26%	|	No	|	--
+6	|	<sp|B1LNS5|TRMA_ECOSM>	|	1.45	|	36%	|	No	|	--
+7	|	<sp|Q88XP4|Y1151_LACPL>	|	1.45	|	83%	|	No	|	--
+8	|	<sp|A1RP91|TRMA_SHESW>	|	1.45	|	45%	|	No	|	--
+9	|	<sp|Q5PK68|TRMA_SALPA>	|	1.46	|	40%	|	No	|	--
+10	|	<sp|B5BJN9|TRMA_SALPK>	|	1.46	|	40%	|	No	|	--
+
+
+Method: IVF-PQ
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|B2TWG0|TRMA_SHIB3>	|	1.44	|	36%	|	No	|	--
+2	|	<sp|B1LNS5|TRMA_ECOSM>	|	1.45	|	36%	|	No	|	--
+3	|	<sp|A1RP91|TRMA_SHESW>	|	1.45	|	45%	|	No	|	--
+4	|	<sp|B5BJN9|TRMA_SALPK>	|	1.46	|	40%	|	No	|	--
+5	|	<sp|Q5PK68|TRMA_SALPA>	|	1.46	|	40%	|	No	|	--
+6	|	<sp|Q5E320|RLMD_ALIF1>	|	1.48	|	22%	|	No	|	--
+7	|	<sp|B0VRJ4|RSMC_ACIBS>	|	1.48	|	42%	|	No	|	--
+8	|	<sp|Q7MHY6|RSMC_VIBVY>	|	1.49	|	86%	|	No	|	--
+9	|	<sp|A6VLF9|TRMA_ACTSZ>	|	1.49	|	30%	|	No	|	--
+10	|	<sp|A3QHZ8|RSMC_SHELP>	|	1.50	|	39%	|	No	|	--
+
+
+
+Query Protein: <A0A009IB02>
+N = 50 (μέγεθος λίστας Top-N για την αξιολόγηση Recall@N)
+
+[1] Συνοπτική σύγκριση μεθόδων
+Method	|	Time/query (s)	|	QPS	|	Recall@N vs BLAST Top-N
+Euclidean LSH	|	0.004	|	260	|	0.30
+Hypercube	|	0.002	|	511	|	0.06
+Neural LSH	|	0.001	|	862	|	0.34
+IVF-Flat	|	0.002	|	423	|	0.32
+IVF-PQ	|	0.001	|	712	|	0.22
+BLAST (Ref)	|	7.715	|	0.13	|	1.00	(ορίζει το Top-N)
+
+
+[2] Top-N γείτονες ανά μέθοδο (εδώ π.χ. N = 10 για εκτύπωση)
+
+Method: Euclidean LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P11961|ODP2_GEOSE>	|	1.98	|	33%	|	Yes	|	--
+2	|	<sp|P22439|ODPX_BOVIN>	|	2.19	|	25%	|	Yes	|	--
+3	|	<sp|P43874|BCCP_HAEIN>	|	2.22	|	41%	|	Yes	|	--
+4	|	<sp|P29337|BCCP_STRMU>	|	2.29	|	41%	|	Yes	|	--
+5	|	<sp|P02904|BCCP_PROFR>	|	2.35	|	40%	|	Yes	|	--
+6	|	<sp|P0ABE1|BCCP_SHIFL>	|	2.44	|	36%	|	Yes	|	--
+7	|	<sp|Q06881|BCCP_NOSS1>	|	2.48	|	32%	|	Yes	|	--
+8	|	<sp|Q68XI8|ODO2_RICTY>	|	2.55	|	28%	|	Yes	|	--
+9	|	<sp|P39099|DEGQ_ECOLI>	|	2.66	|	34%	|	No	|	--
+10	|	<sp|Q1CK59|MDTA_YERPN>	|	2.77	|	52%	|	Yes	|	--
+
+
+Method: Hypercube
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q9SQI8|ODP24_ARATH>	|	2.01	|	29%	|	Yes	|	--
+2	|	<sp|P22439|ODPX_BOVIN>	|	2.19	|	25%	|	Yes	|	--
+3	|	<sp|A8AH10|RNFC_CITK8>	|	2.64	|	26%	|	No	|	--
+4	|	<sp|C6DH15|RNFC_PECCP>	|	2.66	|	30%	|	No	|	--
+5	|	<sp|B1LEQ7|RSXC_ECOSM>	|	2.77	|	29%	|	No	|	--
+6	|	<sp|Q7VNT4|RNFC_HAEDU>	|	2.94	|	64%	|	No	|	--
+7	|	<sp|A9M4G3|PSD_NEIM0>	|	2.99	|	41%	|	No	|	--
+8	|	<sp|A1KTN1|PSD_NEIMF>	|	2.99	|	30%	|	No	|	--
+9	|	<sp|Q50967|PSD_NEIGO>	|	3.01	|	41%	|	No	|	--
+10	|	<sp|Q5NZ92|GCSH_AROAE>	|	3.12	|	22%	|	No	|	--
+
+
+Method: Neural LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P10802|ODP2_AZOVI>	|	1.19	|	46%	|	Yes	|	--
+2	|	<sp|P11961|ODP2_GEOSE>	|	1.98	|	33%	|	Yes	|	--
+3	|	<sp|Q9SQI8|ODP24_ARATH>	|	2.01	|	29%	|	Yes	|	--
+4	|	<sp|P49786|BCCP_BACSU>	|	2.01	|	30%	|	No	|	--
+5	|	<sp|P22439|ODPX_BOVIN>	|	2.19	|	25%	|	Yes	|	--
+6	|	<sp|P43874|BCCP_HAEIN>	|	2.22	|	41%	|	Yes	|	--
+7	|	<sp|P29337|BCCP_STRMU>	|	2.29	|	41%	|	Yes	|	--
+8	|	<sp|P02904|BCCP_PROFR>	|	2.35	|	40%	|	Yes	|	--
+9	|	<sp|P0ABE1|BCCP_SHIFL>	|	2.44	|	36%	|	Yes	|	--
+10	|	<sp|Q68XI8|ODO2_RICTY>	|	2.55	|	28%	|	Yes	|	--
+
+
+Method: IVF-Flat
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P10802|ODP2_AZOVI>	|	1.19	|	46%	|	Yes	|	--
+2	|	<sp|P11961|ODP2_GEOSE>	|	1.98	|	33%	|	Yes	|	--
+3	|	<sp|Q9SQI8|ODP24_ARATH>	|	2.01	|	29%	|	Yes	|	--
+4	|	<sp|P49786|BCCP_BACSU>	|	2.01	|	30%	|	No	|	--
+5	|	<sp|P43874|BCCP_HAEIN>	|	2.22	|	41%	|	Yes	|	--
+6	|	<sp|P29337|BCCP_STRMU>	|	2.29	|	41%	|	Yes	|	--
+7	|	<sp|P02904|BCCP_PROFR>	|	2.35	|	40%	|	Yes	|	--
+8	|	<sp|P0ABE1|BCCP_SHIFL>	|	2.44	|	36%	|	Yes	|	--
+9	|	<sp|Q06881|BCCP_NOSS1>	|	2.48	|	32%	|	Yes	|	--
+10	|	<sp|P39099|DEGQ_ECOLI>	|	2.66	|	34%	|	No	|	--
+
+
+Method: IVF-PQ
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P10802|ODP2_AZOVI>	|	1.19	|	46%	|	Yes	|	--
+2	|	<sp|P11961|ODP2_GEOSE>	|	1.98	|	33%	|	Yes	|	--
+3	|	<sp|Q9SQI8|ODP24_ARATH>	|	2.01	|	29%	|	Yes	|	--
+4	|	<sp|P49786|BCCP_BACSU>	|	2.01	|	30%	|	No	|	--
+5	|	<sp|P43874|BCCP_HAEIN>	|	2.22	|	41%	|	Yes	|	--
+6	|	<sp|P29337|BCCP_STRMU>	|	2.29	|	41%	|	Yes	|	--
+7	|	<sp|P02904|BCCP_PROFR>	|	2.35	|	40%	|	Yes	|	--
+8	|	<sp|P0ABE1|BCCP_SHIFL>	|	2.44	|	36%	|	Yes	|	--
+9	|	<sp|Q06881|BCCP_NOSS1>	|	2.48	|	32%	|	Yes	|	--
+10	|	<sp|P39099|DEGQ_ECOLI>	|	2.66	|	34%	|	No	|	--
+
+
+
+Query Protein: <A0A010Q3W2>
+N = 50 (μέγεθος λίστας Top-N για την αξιολόγηση Recall@N)
+
+[1] Συνοπτική σύγκριση μεθόδων
+Method	|	Time/query (s)	|	QPS	|	Recall@N vs BLAST Top-N
+Euclidean LSH	|	0.008	|	121	|	0.30
+Hypercube	|	0.002	|	508	|	0.00
+Neural LSH	|	0.002	|	507	|	0.30
+IVF-Flat	|	0.002	|	411	|	0.28
+IVF-PQ	|	0.001	|	1.13e+03	|	0.20
+BLAST (Ref)	|	7.715	|	0.13	|	1.00	(ορίζει το Top-N)
+
+
+[2] Top-N γείτονες ανά μέθοδο (εδώ π.χ. N = 10 για εκτύπωση)
+
+Method: Euclidean LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|D1ZEM6|LIS12_SORMK>	|	1.15	|	30%	|	Yes	|	--
+2	|	<sp|Q9S7I8|CDC22_ARATH>	|	1.30	|	22%	|	No	|	--
+3	|	<sp|Q9NRL3|STRN4_HUMAN>	|	1.31	|	28%	|	Yes	|	--
+4	|	<sp|A2RAG5|ATG18_ASPNC>	|	1.33	|	28%	|	No	|	--
+5	|	<sp|C1GB49|LIS1_PARBD>	|	1.33	|	29%	|	Yes	|	--
+6	|	<sp|O35828|CORO7_RAT>	|	1.33	|	24%	|	No	|	--
+7	|	<sp|Q8VYZ5|PWP2_ARATH>	|	1.35	|	26%	|	Yes	|	--
+8	|	<sp|Q6C709|PRP46_YARLI>	|	1.37	|	23%	|	Yes	|	--
+9	|	<sp|A1CBB8|ATG18_ASPCL>	|	1.38	|	29%	|	No	|	--
+10	|	<sp|Q4PA27|JIP5_MYCMD>	|	1.41	|	22%	|	No	|	--
+
+
+Method: Hypercube
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q4KHU0|RLMF_PSEF5>	|	2.13	|	25%	|	No	|	--
+2	|	<sp|Q9ZV48|TPS11_ARATH>	|	2.14	|	35%	|	No	|	--
+3	|	<sp|A0A067XMV2|PTAH_PESFW>	|	2.15	|	26%	|	No	|	--
+4	|	<sp|A2XY73|COPE2_ORYSI>	|	2.18	|	26%	|	No	|	--
+5	|	<sp|Q13200|PSMD2_HUMAN>	|	2.18	|	28%	|	No	|	--
+6	|	<sp|Q5R9I6|PSMD2_PONAB>	|	2.18	|	28%	|	No	|	--
+7	|	<sp|P0AE23|APHA_SHIFL>	|	2.19	|	55%	|	No	|	--
+8	|	<sp|B1LQ28|NORV_ECOSM>	|	2.21	|	26%	|	No	|	--
+9	|	<sp|Q8Z4C5|NORV_SALTI>	|	2.21	|	23%	|	No	|	--
+10	|	<sp|Q57KT3|NORV_SALCH>	|	2.22	|	26%	|	No	|	--
+
+
+Method: Neural LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|D1ZEM6|LIS12_SORMK>	|	1.15	|	30%	|	Yes	|	--
+2	|	<sp|Q2UUT4|CMR1_ASPOR>	|	1.18	|	36%	|	No	|	--
+3	|	<sp|A2QI22|YTM1_ASPNC>	|	1.23	|	31%	|	No	|	--
+4	|	<sp|P0CS56|CMR1_CRYNJ>	|	1.24	|	34%	|	No	|	--
+5	|	<sp|A1CXL0|YTM1_NEOFI>	|	1.24	|	29%	|	No	|	--
+6	|	<sp|P0CS29|ATG18_CRYNB>	|	1.29	|	21%	|	No	|	--
+7	|	<sp|Q9S7I8|CDC22_ARATH>	|	1.30	|	22%	|	No	|	--
+8	|	<sp|Q9NRL3|STRN4_HUMAN>	|	1.31	|	28%	|	Yes	|	--
+9	|	<sp|Q9SU78|MSI5_ARATH>	|	1.31	|	32%	|	No	|	--
+10	|	<sp|Q756D0|YTM1_EREGS>	|	1.32	|	23%	|	No	|	--
+
+
+Method: IVF-Flat
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|D1ZEM6|LIS12_SORMK>	|	1.15	|	30%	|	Yes	|	--
+2	|	<sp|Q2UUT4|CMR1_ASPOR>	|	1.18	|	36%	|	No	|	--
+3	|	<sp|A2QI22|YTM1_ASPNC>	|	1.23	|	31%	|	No	|	--
+4	|	<sp|P0CS56|CMR1_CRYNJ>	|	1.24	|	34%	|	No	|	--
+5	|	<sp|A1CXL0|YTM1_NEOFI>	|	1.24	|	29%	|	No	|	--
+6	|	<sp|P0CS29|ATG18_CRYNB>	|	1.29	|	21%	|	No	|	--
+7	|	<sp|Q9S7I8|CDC22_ARATH>	|	1.30	|	22%	|	No	|	--
+8	|	<sp|Q9NRL3|STRN4_HUMAN>	|	1.31	|	28%	|	Yes	|	--
+9	|	<sp|Q9SU78|MSI5_ARATH>	|	1.31	|	32%	|	No	|	--
+10	|	<sp|Q756D0|YTM1_EREGS>	|	1.32	|	23%	|	No	|	--
+
+
+Method: IVF-PQ
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q2UUT4|CMR1_ASPOR>	|	1.18	|	36%	|	No	|	--
+2	|	<sp|A2QI22|YTM1_ASPNC>	|	1.23	|	31%	|	No	|	--
+3	|	<sp|P0CS56|CMR1_CRYNJ>	|	1.24	|	34%	|	No	|	--
+4	|	<sp|A1CXL0|YTM1_NEOFI>	|	1.24	|	29%	|	No	|	--
+5	|	<sp|P0CS29|ATG18_CRYNB>	|	1.29	|	21%	|	No	|	--
+6	|	<sp|Q9S7I8|CDC22_ARATH>	|	1.30	|	22%	|	No	|	--
+7	|	<sp|Q9NRL3|STRN4_HUMAN>	|	1.31	|	28%	|	Yes	|	--
+8	|	<sp|Q9SU78|MSI5_ARATH>	|	1.31	|	32%	|	No	|	--
+9	|	<sp|Q756D0|YTM1_EREGS>	|	1.32	|	23%	|	No	|	--
+10	|	<sp|Q9P7C0|YKU5_SCHPO>	|	1.32	|	22%	|	No	|	--
+
+
+
+Query Protein: <A0A010Q8R4>
+N = 50 (μέγεθος λίστας Top-N για την αξιολόγηση Recall@N)
+
+[1] Συνοπτική σύγκριση μεθόδων
+Method	|	Time/query (s)	|	QPS	|	Recall@N vs BLAST Top-N
+Euclidean LSH	|	0.008	|	132	|	0.16
+Hypercube	|	0.002	|	487	|	0.00
+Neural LSH	|	0.001	|	713	|	0.22
+IVF-Flat	|	0.003	|	359	|	0.18
+IVF-PQ	|	0.001	|	901	|	0.18
+BLAST (Ref)	|	7.715	|	0.13	|	1.00	(ορίζει το Top-N)
+
+
+[2] Top-N γείτονες ανά μέθοδο (εδώ π.χ. N = 10 για εκτύπωση)
+
+Method: Euclidean LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|P0CS56|CMR1_CRYNJ>	|	1.24	|	38%	|	No	|	--
+2	|	<sp|Q6CXX3|HIR1_KLULA>	|	1.35	|	25%	|	Yes	|	--
+3	|	<sp|A1CBB8|ATG18_ASPCL>	|	1.37	|	55%	|	No	|	--
+4	|	<sp|A2RAG5|ATG18_ASPNC>	|	1.39	|	40%	|	No	|	--
+5	|	<sp|A1DE24|ATG18_NEOFI>	|	1.43	|	55%	|	No	|	--
+6	|	<sp|O35828|CORO7_RAT>	|	1.50	|	29%	|	Yes	|	--
+7	|	<sp|Q9NRL3|STRN4_HUMAN>	|	1.55	|	26%	|	No	|	--
+8	|	<sp|Q9S7I8|CDC22_ARATH>	|	1.59	|	24%	|	No	|	--
+9	|	<sp|A8XSW2|WDR48_CAEBR>	|	1.61	|	31%	|	No	|	--
+10	|	<sp|Q6FLA4|ERB1_CANGA>	|	1.61	|	44%	|	No	|	--
+
+
+Method: Hypercube
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q9P4R5|CREC_EMENI>	|	1.22	|	36%	|	No	|	--
+2	|	<sp|Q652L2|HIRA_ORYSJ>	|	1.23	|	37%	|	No	|	--
+3	|	<sp|A1DIN7|ATP25_NEOFI>	|	1.49	|	30%	|	No	|	--
+4	|	<sp|Q9VCE9|EPP_DROME>	|	1.57	|	25%	|	No	|	--
+5	|	<sp|P36002|PTK1_YEAST>	|	1.58	|	32%	|	No	|	--
+6	|	<sp|A2QGF0|NAGS_ASPNC>	|	1.59	|	33%	|	No	|	--
+7	|	<sp|Q4WWM8|SEC2_ASPFU>	|	1.62	|	25%	|	No	|	--
+8	|	<sp|O14302|CYK3_SCHPO>	|	1.62	|	37%	|	No	|	--
+9	|	<sp|A1D3A0|NPR3_NEOFI>	|	1.67	|	30%	|	No	|	--
+10	|	<sp|Q8BXK8|AGAP1_MOUSE>	|	1.67	|	41%	|	No	|	--
+
+
+Method: Neural LSH
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q9P4R5|CREC_EMENI>	|	1.22	|	36%	|	No	|	--
+2	|	<sp|Q652L2|HIRA_ORYSJ>	|	1.23	|	37%	|	No	|	--
+3	|	<sp|P0CS56|CMR1_CRYNJ>	|	1.24	|	38%	|	No	|	--
+4	|	<sp|P0CS29|ATG18_CRYNB>	|	1.27	|	100%	|	No	|	--
+5	|	<sp|Q5NVM2|DC1I2_PONAB>	|	1.33	|	42%	|	No	|	--
+6	|	<sp|Q2UUT4|CMR1_ASPOR>	|	1.34	|	29%	|	No	|	--
+7	|	<sp|Q6CXX3|HIR1_KLULA>	|	1.35	|	25%	|	Yes	|	--
+8	|	<sp|A1CBB8|ATG18_ASPCL>	|	1.37	|	55%	|	No	|	--
+9	|	<sp|Q9P7C0|YKU5_SCHPO>	|	1.38	|	37%	|	No	|	--
+10	|	<sp|Q24246|DYIN_DROME>	|	1.39	|	21%	|	No	|	--
+
+
+Method: IVF-Flat
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q9P4R5|CREC_EMENI>	|	1.22	|	36%	|	No	|	--
+2	|	<sp|Q652L2|HIRA_ORYSJ>	|	1.23	|	37%	|	No	|	--
+3	|	<sp|P0CS56|CMR1_CRYNJ>	|	1.24	|	38%	|	No	|	--
+4	|	<sp|P0CS29|ATG18_CRYNB>	|	1.27	|	100%	|	No	|	--
+5	|	<sp|Q5NVM2|DC1I2_PONAB>	|	1.33	|	42%	|	No	|	--
+6	|	<sp|Q2UUT4|CMR1_ASPOR>	|	1.34	|	29%	|	No	|	--
+7	|	<sp|Q6CXX3|HIR1_KLULA>	|	1.35	|	25%	|	Yes	|	--
+8	|	<sp|A1CBB8|ATG18_ASPCL>	|	1.37	|	55%	|	No	|	--
+9	|	<sp|Q9P7C0|YKU5_SCHPO>	|	1.38	|	37%	|	No	|	--
+10	|	<sp|Q24246|DYIN_DROME>	|	1.39	|	21%	|	No	|	--
+
+
+Method: IVF-PQ
+
+Rank	|	Neighbor ID	|	L2 Dist	|	BLAST Identity	|	In BLAST Top-N?	|	Bio comment
+1	|	<sp|Q9P4R5|CREC_EMENI>	|	1.22	|	36%	|	No	|	--
+2	|	<sp|Q652L2|HIRA_ORYSJ>	|	1.23	|	37%	|	No	|	--
+3	|	<sp|P0CS56|CMR1_CRYNJ>	|	1.24	|	38%	|	No	|	--
+4	|	<sp|P0CS29|ATG18_CRYNB>	|	1.27	|	100%	|	No	|	--
+5	|	<sp|Q5NVM2|DC1I2_PONAB>	|	1.33	|	42%	|	No	|	--
+6	|	<sp|Q2UUT4|CMR1_ASPOR>	|	1.34	|	29%	|	No	|	--
+7	|	<sp|Q6CXX3|HIR1_KLULA>	|	1.35	|	25%	|	Yes	|	--
+8	|	<sp|A1CBB8|ATG18_ASPCL>	|	1.37	|	55%	|	No	|	--
+9	|	<sp|Q9P7C0|YKU5_SCHPO>	|	1.38	|	37%	|	No	|	--
+10	|	<sp|Q24246|DYIN_DROME>	|	1.39	|	21%	|	No	|	--
+
+
+

@@ -1,0 +1,14 @@
+# Python 3.10+
+numpy>=1.24
+
+# ESM-2 embeddings (imports as `esm`)
+fair-esm>=2.0.0
+
+# Neural LSH training/inference
+torch>=2.1
+
+# UX / utilities
+tqdm>=4.66
+
+# Plotting (for create_plots.py)
+matplotlib>=3.7

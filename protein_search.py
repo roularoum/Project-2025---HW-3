@@ -108,22 +108,24 @@ def parse_args() -> argparse.Namespace:
     # -----------------
     # Method parameters
     # -----------------
-    parser.add_argument("--lsh-k", type=int, default=4)
-    parser.add_argument("--lsh-L", type=int, default=5)
+    # Defaults tuned on the provided SwissProt(50k)+targets set via a small grid search
+    # (see protein_grid_search.py outputs) to balance Recall@N vs QPS.
+    parser.add_argument("--lsh-k", type=int, default=6)
+    parser.add_argument("--lsh-L", type=int, default=10)
     parser.add_argument("--lsh-w", type=float, default=4.0)
 
     parser.add_argument("--hc-kproj", type=int, default=14)
     parser.add_argument("--hc-w", type=float, default=4.0)
     parser.add_argument("--hc-M", type=int, default=1000)
-    parser.add_argument("--hc-probes", type=int, default=10)
+    parser.add_argument("--hc-probes", type=int, default=20)
 
-    parser.add_argument("--ivf-kclusters", type=int, default=50)
+    parser.add_argument("--ivf-kclusters", type=int, default=100)
     parser.add_argument("--ivf-nprobe", type=int, default=5)
 
     parser.add_argument("--pq-M", type=int, default=16)
     parser.add_argument("--pq-nbits", type=int, default=8)
 
-    parser.add_argument("--nlsh-m", type=int, default=100)
+    parser.add_argument("--nlsh-m", type=int, default=200)
     parser.add_argument("--nlsh-T", type=int, default=5)
     parser.add_argument("--nlsh-epochs", type=int, default=10)
     parser.add_argument("--nlsh-layers", type=int, default=3)
