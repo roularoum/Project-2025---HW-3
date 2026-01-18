@@ -19,7 +19,7 @@ from .base import AnnIndex, AnnQueryResult  # base interface + apotelesma query
 from .ivf_flat import IvfFlatParams  #params gia IVF-Flat
 from .kmeans import KMeansParams, kmeans_fit, predict_labels  # k-means fit + assign labels
 from .pq import ensure_float32_1d, ensure_float32_2d, l2_sq_to_many, topk_smallest  # helpers + distance + topk 
-
+from .utils import ensure_float32_1d, ensure_float32_2d, l2_sq_to_many, topk_smallest
 
 @dataclass
 class IvfPqParams:
